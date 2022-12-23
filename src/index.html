@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="resources/icons/icon.css" />
+  <link rel="stylesheet" href="resources/fonts/roboto.css" />
+  <link rel="stylesheet" href="resources/material/material.indigo-pink.min.css" />
+  <link rel="stylesheet" href="resources/Treant.css" />
+  <link rel="stylesheet" href="resources/index.css" />
+</head>
+
+<body>
+  <div class="centered" id="home">
+    <div style="z-index: 1">
+      <h2>FileViz</h2>
+      <h4>Visualize your file structure</h4>
+      <div id="method">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="method-dfs" style="margin-right: 15px">
+          <input type="radio" id="method-dfs" class="mdl-radio__button" name="options" value="1" checked>
+          <span class="mdl-radio__label" id="method-dfs-label">
+            DFS
+          </span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-bfs">
+          <input type="radio" id="option-bfs" class="mdl-radio__button" name="options" value="2">
+          <span class="mdl-radio__label" id="method-bfs-label">BFS</span>
+        </label>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="file-select">
+        Select a Folder
+      </button>
+    </div>
+  </div>
+  <div class="centered" id="tree">
+    <div class="chart" id="basic-example"></div>
+  </div>
+  <div class="mdl-tooltip" data-mdl-for="method-dfs-label">
+    <b>Depth First Search</b>
+    <br /><br />
+    This will search the directory branch by branch
+  </div>
+  <div class="mdl-tooltip" data-mdl-for="method-bfs-label">
+    <b>Breadth First Search</b>
+    <br /><br />
+    This will search the directory level by level
+  </div>
+  <script src="resources/material/material.min.js"></script>
+  <script src="resources/jquery-3.6.2.min.js"></script>
+  <script src="resources/raphael.js"></script>
+  <script src="resources/Treant.min.js"></script>
+  <script src="resources/panzoom.min.js"></script>
+  <script src="resources/index.js"></script>
+</body>
+
+</html>

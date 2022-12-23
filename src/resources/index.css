@@ -1,0 +1,35 @@
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#dots {
+  position: absolute;
+  left: -50px;
+  bottom: -25px;
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: 300;
+}
+
+.chart {
+  max-width: 100%;
+}
+
+#file-select{
+  margin-top: 20px;
+}
+
+.mdl-tooltip {
+  font-size: 13px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.mdl-radio{
+  font-family: "Roboto";
+}
