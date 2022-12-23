@@ -1,0 +1,81 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  cursor: grab;
+}
+
+body:active {
+  cursor: grabbing;
+}
+
+#chart-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+#tree {
+  overflow-x: unset !important;
+  overflow: unset !important;
+  height: 100%;
+}
+
+#label {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+  line-height: 22px;
+  padding: 0 10px;
+  color: white;
+  background-color: rgb(0, 122, 204);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label-side {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label-item {
+  padding: 0 10px;
+}
+
+#scan-loading .mdl-spinner__layer {
+  border-color: white !important;
+}
+
+#scan-loading .mdl-spinner {
+  height: 12px;
+  width: 12px;
+  margin-right: 7.5px;
+}
+
+#scan-loading .mdl-spinner__circle{
+  border-width: 2px !important;
+}
+
+#scan-loading{
+  display: flex;
+  align-items: center;
+}
+
+#scan-finished{
+  display: none;
+  align-items: center;
+}
+
+#scan-finished span {
+  font-size: 12px;
+  margin-right: 7.5px;
+}

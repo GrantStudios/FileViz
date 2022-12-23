@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Tree</title>
+    <link rel="stylesheet" href="resources/icons/icon.css" />
+    <link rel="stylesheet" href="resources/fonts/roboto.css" />
+    <link rel="stylesheet" href="resources/material/material.indigo-pink.min.css" />
+    <link rel="stylesheet" href="resources/Treant.css" />
+    <link rel="stylesheet" href="resources/tree.css" />
+</head>
+
+<body>
+    <div id="chart-container">
+        <div class="chart" id="tree"></div>
+    </div>
+    <div id="label">
+        <div id="label-left" class="label-side">
+            <div class="label-item">
+                <div id="scan-loading">
+                    <div class="mdl-spinner mdl-js-spinner mdl-spinner--single-color is-active"></div>
+                    Scanning files
+                </div>
+                <div id="scan-finished">
+                    <span class="material-icons">
+                        done
+                    </span>Finished scanning
+                </div>
+            </div>
+            <div class="label-item">
+                <span id="files-scanned">0</span> files scanned
+            </div>
+
+        </div>
+        <div id="label-right" class="label-side">
+            Drag to move, scroll to zoom
+        </div>
+    </div>
+    <script src="resources/material/material.min.js"></script>
+    <script src="resources/jquery-3.6.2.min.js"></script>
+    <script src="resources/raphael.js"></script>
+    <script src="resources/Treant.min.js"></script>
+    <script src="resources/panzoom.min.js"></script>
+    <script src="resources/tree.js"></script>
+</body>
+
+</html>
