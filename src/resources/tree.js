@@ -1,6 +1,11 @@
 const ENUMS = {
     SEARCH_METHOD: {
         BFS: 'BFS', DFS: 'DFS'
+    },
+    OPTIONS: {
+        TREE_STYLE: {
+            CURVE: 'curve', STRAIGHT: 'straight'
+        }
     }
 }
 
