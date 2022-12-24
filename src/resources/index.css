@@ -5,12 +5,6 @@
   transform: translate(-50%, -50%);
 }
 
-#dots {
-  position: absolute;
-  left: -50px;
-  bottom: -25px;
-}
-
 h2 {
   margin-top: 0;
   font-weight: 300;
@@ -74,4 +68,22 @@ h2 {
 
 .option-radio {
   display: flex;
+}
+
+#label{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: grey;
+}
+
+#dots{
+  position: absolute;
+  left: -50px;
+  top: -25px;
+  background-image: radial-gradient(circle at 2px 2px, #d9e1e4 2px, transparent 0);
+  background-size: 40px 40px;
+  height: 100px;
+  width: 200px;
+  z-index: -1;
 }

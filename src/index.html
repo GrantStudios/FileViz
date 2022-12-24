@@ -39,7 +39,8 @@
         <span class="slider-value">50</span>
       </div>
       <div class="option-slider">
-        <input class="mdl-slider mdl-js-slider" type="range" min="10" max="100" value="50" tabindex="0" id="level-seperation">
+        <input class="mdl-slider mdl-js-slider" type="range" min="10" max="100" value="50" tabindex="0"
+          id="level-seperation">
       </div>
     </div>
     <div class="option-item">
@@ -48,12 +49,26 @@
         <span class="slider-value">30</span>
       </div>
       <div class="option-slider">
-        <input class="mdl-slider mdl-js-slider" type="range" min="10" max="100" value="30" tabindex="0" id="sibling-seperation">
+        <input class="mdl-slider mdl-js-slider" type="range" min="10" max="100" value="30" tabindex="0"
+          id="sibling-seperation">
+      </div>
+    </div>
+    <div class="option-item">
+      <div class="option-heading">
+        <h6>File Scan Limit</h6>
+      </div>
+      <span style="color: grey;font-size: 13px;">Leave empty for no limit</span>
+      <div class="option-radio">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="file-scan-limit">
+          <label class="mdl-textfield__label" for="sample2">Number...</label>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="centered" id="home">
+    <div id="dots"></div>
     <div style="z-index: 1">
       <h2>FileViz</h2>
       <h4>Visualize your file structure</h4>
@@ -87,11 +102,16 @@
     <br /><br />
     This will search the directory level by level
   </div>
+  <div id="label">
+    v<span id="version"></span> © GrantStudios &middot; <a href="https://github.com/GrantStudios/FileViz"
+      data-external-link>Github</a>
+  </div>
   <script src="resources/material/material.min.js"></script>
   <script src="resources/jquery-3.6.2.min.js"></script>
   <script src="resources/raphael.js"></script>
   <script src="resources/Treant.min.js"></script>
   <script src="resources/panzoom.min.js"></script>
+  <script src="resources/global.js"></script>
   <script src="resources/index.js"></script>
 </body>
 

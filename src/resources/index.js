@@ -19,13 +19,15 @@ $('#file-select').click(function () {
 
             const levelSeperation = +$('#level-seperation').val()
             const siblingSeparation = +$('#sibling-seperation').val()
+            const fileScanLimit = $('#file-scan-limit').val()
             window.api.start({
                 method: isDfs ? ENUMS.SEARCH_METHOD.DFS : ENUMS.SEARCH_METHOD.BFS,
                 folderPath: file[0],
                 options: {
                     tree_style: isTreeStyleCurvy ? ENUMS.OPTIONS.TREE_STYLE.CURVE : ENUMS.OPTIONS.TREE_STYLE.STRAIGHT,
                     levelSeperation,
-                    siblingSeparation
+                    siblingSeparation,
+                    fileScanLimit: +fileScanLimit
                 }
             })
         }
@@ -46,7 +48,9 @@ $(document).click(function (e) {
     settingsModal.slideUp('fast')
 })
 
-$('.mdl-slider', settingsModal).on('input', function(){
+$('.mdl-slider', settingsModal).on('input', function () {
     const val = this.value;
     $(this).closest('.option-item').find('.slider-value').text(val)
 })
+
+$('#version').text(window.util.getVersion())
