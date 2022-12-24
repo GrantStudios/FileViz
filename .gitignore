@@ -1,6 +1,6 @@
 .project
 
-
+dist/*.yml
 .DS_Store
 .env
 .gclient_done
