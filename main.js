@@ -27,7 +27,6 @@ const showMainWindow = () => {
 
     win.loadFile('src/index.html')
 
-
     function promptUpload(options) {
         return dialog.showOpenDialogSync(win, options)
     }
@@ -49,7 +48,11 @@ const showMainWindow = () => {
                 }
             }
         }
-        
+
+        const userConfig = {
+            fileScanLimit: options.fileScanLimit
+        }
+
         const treeWin = new BrowserWindow({
             autoHideMenuBar: true,
             width: 800,
@@ -61,12 +64,11 @@ const showMainWindow = () => {
             },
         })
         treeWin.loadFile('src/tree.html')
-        treeWin.webContents.send('startSearch', {
-            method, folderPath, config
-        })
 
-        treeWin.on('browser-window-blur', (event, w) => {
-            treeWin.focus()
+        treeWin.once('ready-to-show', () => {
+            treeWin.webContents.send('startSearch', {
+                method, folderPath, config, userConfig
+            })
         })
     })
 
