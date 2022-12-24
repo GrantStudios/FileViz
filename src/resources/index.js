@@ -16,11 +16,16 @@ $('#file-select').click(function () {
         if (file && file[0]) {
             const isDfs = $('#method-dfs').prop('checked')
             const isTreeStyleCurvy = $('#tree-style-curvy').prop('checked')
+
+            const levelSeperation = +$('#level-seperation').val()
+            const siblingSeparation = +$('#sibling-seperation').val()
             window.api.start({
                 method: isDfs ? ENUMS.SEARCH_METHOD.DFS : ENUMS.SEARCH_METHOD.BFS,
                 folderPath: file[0],
                 options: {
-                    tree_style: isTreeStyleCurvy ? ENUMS.OPTIONS.TREE_STYLE.CURVE : ENUMS.OPTIONS.TREE_STYLE.STRAIGHT
+                    tree_style: isTreeStyleCurvy ? ENUMS.OPTIONS.TREE_STYLE.CURVE : ENUMS.OPTIONS.TREE_STYLE.STRAIGHT,
+                    levelSeperation,
+                    siblingSeparation
                 }
             })
         }
@@ -39,4 +44,9 @@ settingsToggle.click(function (e) {
 
 $(document).click(function (e) {
     settingsModal.slideUp('fast')
+})
+
+$('.mdl-slider', settingsModal).on('input', function(){
+    const val = this.value;
+    $(this).closest('.option-item').find('.slider-value').text(val)
 })

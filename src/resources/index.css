@@ -43,7 +43,7 @@ h2 {
 }
 
 #settings {
-  width: 200px;
+  width: 250px;
   padding: 15px 20px;
   box-sizing: border-box;
   display: none;
@@ -52,11 +52,20 @@ h2 {
   position: fixed;
   top: 80px;
   right: 25px;
+  z-index: 10;
+  background-color: white;
 }
 
 #settings h5 {
-  margin-top: 0;
+  margin: 0;
   font-weight: 300;
+}
+
+#settings .option-heading {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #settings h6 {

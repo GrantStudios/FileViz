@@ -18,16 +18,38 @@
   </button>
   <div id="settings">
     <h5>Options</h5>
-    <h6>Tree style</h6>
-    <div class="option-radio">
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="tree-style-curvy" style="margin-right: 15px">
-        <input type="radio" id="tree-style-curvy" class="mdl-radio__button" name="tree-style" value="1" checked>
-        <span class="mdl-radio__label">Curvy</span>
-      </label>
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="tree-style-straight">
-        <input type="radio" id="tree-style-straight" class="mdl-radio__button" name="tree-style" value="2">
-        <span class="mdl-radio__label">Straight</span>
-      </label>
+    <div class="option-item">
+      <div class="option-heading">
+        <h6>Tree Style</h6>
+      </div>
+      <div class="option-radio">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="tree-style-curvy" style="margin-right: 15px">
+          <input type="radio" id="tree-style-curvy" class="mdl-radio__button" name="tree-style" value="1" checked>
+          <span class="mdl-radio__label">Curvy</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="tree-style-straight">
+          <input type="radio" id="tree-style-straight" class="mdl-radio__button" name="tree-style" value="2">
+          <span class="mdl-radio__label">Straight</span>
+        </label>
+      </div>
+    </div>
+    <div class="option-item">
+      <div class="option-heading">
+        <h6>Level Seperation</h6>
+        <span class="slider-value">50</span>
+      </div>
+      <div class="option-slider">
+        <input class="mdl-slider mdl-js-slider" type="range" min="10" max="100" value="50" tabindex="0" id="level-seperation">
+      </div>
+    </div>
+    <div class="option-item">
+      <div class="option-heading">
+        <h6>Sibling Seperation</h6>
+        <span class="slider-value">30</span>
+      </div>
+      <div class="option-slider">
+        <input class="mdl-slider mdl-js-slider" type="range" min="10" max="100" value="30" tabindex="0" id="sibling-seperation">
+      </div>
     </div>
   </div>
 

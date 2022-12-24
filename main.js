@@ -39,9 +39,8 @@ const showMainWindow = () => {
     ipcMain.handle("start", async (e, { method, folderPath, options }) => {
         config = {
             container: "#tree",
-            levelSeparation:    20,
-            siblingSeparation:  15,
-            subTeeSeparation:   15,
+            levelSeparation:    options.levelSeperation, //50
+            siblingSeparation:  options.siblingSeparation, //30
             connectors: {
                 type: options.tree_style,
                 style: {
@@ -50,6 +49,8 @@ const showMainWindow = () => {
                 }
             }
         }
+
+        console.log(config)
         
         const treeWin = new BrowserWindow({
             autoHideMenuBar: true,
