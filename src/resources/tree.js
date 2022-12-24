@@ -24,15 +24,16 @@ window.api.receive("startSearch", ({ method, folderPath, config }) => {
     worker.addEventListener("message", function handleMessageFromWorker(msg) {
         const { finished, scanned, treeData } = msg.data;
         if (finished) {
+            $('.scan-status-indicator').hide()
             $('#scan-finished').css('display', 'flex')
-            $('#scan-loading').hide()
             const elapsed = performance.now() - start
             $('#scan-time').text(elapsed.toFixed(0))
+            $('#stop-search').hide()
         }
         filesScannedLabel.text(scanned)
         new Treant(treeData)
     });
-    worker.postMessage({ folderPath, config })
+    worker.postMessage({folderPath, config })
 })
 
 const pz = panzoom(tree)
@@ -40,4 +41,11 @@ const pz = panzoom(tree)
 $('#reset-zoom').click(function () {
     pz.zoomAbs(0, 0, 1)
     pz.moveTo(0, 0)
+})
+
+$('#stop-search').click(function(){
+    worker.terminate()
+    $('.scan-status-indicator').hide()
+    $(this).hide()
+    $('#scan-stopped').css('display', 'flex')
 })

@@ -19,16 +19,25 @@
     <div id="label">
         <div id="label-left" class="label-side">
             <div class="label-item">
-                <div id="scan-loading">
+                <div id="scan-loading" class="scan-status-indicator">
                     <div class="mdl-spinner mdl-js-spinner mdl-spinner--single-color is-active"></div>
                     Scanning files
                 </div>
-                <div id="scan-finished">
+                <div id="scan-finished" class="scan-status-indicator">
                     <span class="material-icons">
                         done
                     </span>Finished scanning (<span id="scan-time"></span>ms)
                 </div>
+                <div id="scan-stopped" class="scan-status-indicator">
+                    <span class="material-icons">
+                        do_not_disturb
+                    </span> Scan stopped
+                </div>
             </div>
+            <div class="label-item clickable" id="stop-search">
+                Stop scan
+            </div>
+            
             <div class="label-item">
                 <span id="files-scanned">0</span> files scanned
             </div>

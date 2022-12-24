@@ -82,7 +82,12 @@ body {
   align-items: center;
 }
 
-#scan-finished .material-icons {
+#scan-stopped{
+  display: none;
+  align-items: center;
+}
+
+#scan-finished .material-icons, #scan-stopped .material-icons {
   font-size: 12px;
   margin-right: 7.5px;
 }
