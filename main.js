@@ -49,8 +49,6 @@ const showMainWindow = () => {
                 }
             }
         }
-
-        console.log(config)
         
         const treeWin = new BrowserWindow({
             autoHideMenuBar: true,
