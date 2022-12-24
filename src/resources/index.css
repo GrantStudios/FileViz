@@ -20,7 +20,7 @@ h2 {
   max-width: 100%;
 }
 
-#file-select{
+#file-select {
   margin-top: 20px;
 }
 
@@ -30,6 +30,35 @@ h2 {
   padding-bottom: 15px;
 }
 
-.mdl-radio{
+.mdl-radio {
   font-family: "Roboto";
+}
+
+#settings-toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+#settings {
+  width: 200px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  display: none;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+  position: fixed;
+  top: 80px;
+  right: 25px;
+}
+
+#settings h5 {
+  margin: 0;
+  font-weight: 300;
+}
+
+.option-radio {
+  display: flex;
 }

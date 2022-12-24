@@ -15,3 +15,17 @@ $('#file-select').click(function(){
         })
     });
 })
+
+const settingsModal = $('#settings')
+const settingsToggle = $('#settings-toggle')
+settingsModal.click(function(e){
+    e.stopPropagation();
+})
+settingsToggle.click(function(e){
+    settingsModal.slideToggle('fast');
+    e.stopPropagation()
+})
+
+$(document).click(function(e){
+    settingsModal.slideUp('fast')
+})

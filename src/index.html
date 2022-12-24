@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
-  <title>Hello World!</title>
+  <title>FileViz</title>
   <link rel="stylesheet" href="resources/icons/icon.css" />
   <link rel="stylesheet" href="resources/fonts/roboto.css" />
   <link rel="stylesheet" href="resources/material/material.indigo-pink.min.css" />
@@ -13,6 +13,24 @@
 </head>
 
 <body>
+  <button id="settings-toggle" class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
+    <span class="material-icons">settings</span>
+  </button>
+  <div id="settings">
+    <h5>Options</h5>
+    <p>Tree style</p>
+    <div class="option-radio">
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="tree-style-curvy" style="margin-right: 15px">
+        <input type="radio" id="tree-style-curvy" class="mdl-radio__button" name="tree-style" value="1" checked>
+        <span class="mdl-radio__label">Curvy</span>
+      </label>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="tree-style-straight">
+        <input type="radio" id="tree-style-straight" class="mdl-radio__button" name="tree-style" value="2">
+        <span class="mdl-radio__label">Straight</span>
+      </label>
+    </div>
+  </div>
+
   <div class="centered" id="home">
     <div style="z-index: 1">
       <h2>FileViz</h2>
