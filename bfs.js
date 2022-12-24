@@ -1,7 +1,8 @@
 const path = require('path')
 const fs = require('fs')
 
-self.addEventListener("message", function ({ data: {folderPath, config} }) {
+self.addEventListener("message", function ({ data: { folderPath, config, userConfig } }) {
+    const { fileScanLimit } = userConfig;
     parent_node = {
         text: { name: path.basename(folderPath) }
     };
@@ -20,7 +21,7 @@ self.addEventListener("message", function ({ data: {folderPath, config} }) {
         })
     })
 
-    while (q.length > 0) {
+    while (q.length > 0 && (fileScanLimit == 0 || fileScanLimit > scanned)) {
         const current = q.shift();
         chart_config.push(current);
         scanned++;

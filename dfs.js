@@ -1,7 +1,8 @@
 const path = require('path')
 const fs = require('fs')
 
-self.addEventListener("message", function ({ data: {folderPath, config} }) {
+self.addEventListener("message", function ({ data: { folderPath, config, userConfig } }) {
+    const { fileScanLimit } = userConfig;
     parent_node = {
         text: { name: path.basename(folderPath) }
     };
@@ -10,22 +11,24 @@ self.addEventListener("message", function ({ data: {folderPath, config} }) {
         config, parent_node,
     ];
 
-    function dfs(file){
-        const current = file;
-        chart_config.push(file)
-        scanned++
-        self.postMessage({ finished: false, scanned, treeData: chart_config })
-        if(fs.lstatSync(current.path).isDirectory()){
-            fs.readdirSync(current.path).forEach(file => {
-                return dfs({
-                    parent: current,
-                    path: path.join(current.path, file),
-                    text: { name: file },
+    function dfs(file) {
+        if (fileScanLimit == 0 || fileScanLimit > scanned) {
+            const current = file;
+            chart_config.push(file)
+            scanned++
+            self.postMessage({ finished: false, scanned, treeData: chart_config })
+            if (fs.lstatSync(current.path).isDirectory()) {
+                fs.readdirSync(current.path).forEach(file => {
+                    return dfs({
+                        parent: current,
+                        path: path.join(current.path, file),
+                        text: { name: file },
+                    })
                 })
-            })
+            }
         }
     }
-        
+
 
     let scanned = 0;
     fs.readdirSync(folderPath).forEach(file => {
