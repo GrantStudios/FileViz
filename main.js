@@ -3,6 +3,17 @@ const path = require('path')
 const fs = require('fs')
 const cp = require('child_process');
 
+const ENUMS = {
+    SEARCH_METHOD: {
+        BFS: 'BFS', DFS: 'DFS'
+    },
+    OPTIONS: {
+        TREE_STYLE: {
+            CURVE: 'curve', STRAIGHT: 'straight'
+        }
+    }
+}
+
 const showMainWindow = () => {
     const win = new BrowserWindow({
         autoHideMenuBar: true,
@@ -25,14 +36,14 @@ const showMainWindow = () => {
         return promptUpload(args);
     })
 
-    ipcMain.handle("start", async (e, { method, folderPath }) => {
+    ipcMain.handle("start", async (e, { method, folderPath, options }) => {
         config = {
             container: "#tree",
             levelSeparation:    20,
             siblingSeparation:  15,
             subTeeSeparation:   15,
             connectors: {
-                type: "straight",
+                type: options.tree_style,
                 style: {
                     "stroke-width": 2,
                     "stroke": "#ccc"
@@ -54,7 +65,10 @@ const showMainWindow = () => {
         treeWin.webContents.send('startSearch', {
             method, folderPath, config
         })
-        // startScanner(folderPath, treeWin)
+
+        treeWin.on('browser-window-blur', (event, w) => {
+            treeWin.focus()
+        })
     })
 
 }
