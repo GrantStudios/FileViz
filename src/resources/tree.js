@@ -7,7 +7,9 @@ const ENUMS = {
 const filesScannedLabel = $('#files-scanned')
 
 let worker;
+let start;
 window.api.receive("startSearch", ({ method, folderPath, config }) => {
+    start = performance.now()
     if (method == ENUMS.SEARCH_METHOD.BFS) {
         worker = new Worker('../bfs.js')
     } else {
@@ -19,6 +21,8 @@ window.api.receive("startSearch", ({ method, folderPath, config }) => {
         if (finished) {
             $('#scan-finished').css('display', 'flex')
             $('#scan-loading').hide()
+            const elapsed = performance.now() - start
+            $('#scan-time').text(elapsed.toFixed(0))
         }
         filesScannedLabel.text(scanned)
         new Treant(treeData)
@@ -26,4 +30,9 @@ window.api.receive("startSearch", ({ method, folderPath, config }) => {
     worker.postMessage({ folderPath, config })
 })
 
-panzoom(tree)
+const pz = panzoom(tree)
+
+$('#reset-zoom').click(function () {
+    pz.zoomAbs(0, 0, 1)
+    pz.moveTo(0, 0)
+})

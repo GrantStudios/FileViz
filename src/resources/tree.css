@@ -5,11 +5,11 @@ body {
   margin: 0;
 }
 
-body {
+#chart-container {
   cursor: grab;
 }
 
-body:active {
+#chart-container:active {
   cursor: grabbing;
 }
 
@@ -25,6 +25,7 @@ body:active {
 }
 
 #label {
+  user-select: none;
   position: fixed;
   z-index: 1;
   bottom: 0;
@@ -39,6 +40,12 @@ body:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  white-space: nowrap;
+}
+
+.label-item.clickable:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .label-side {
@@ -75,7 +82,7 @@ body:active {
   align-items: center;
 }
 
-#scan-finished span {
+#scan-finished .material-icons {
   font-size: 12px;
   margin-right: 7.5px;
 }
