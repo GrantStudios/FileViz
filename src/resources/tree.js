@@ -13,7 +13,7 @@ const filesScannedLabel = $('#files-scanned')
 
 let worker;
 let start;
-window.api.receive("startSearch", ({ method, folderPath, config }) => {
+window.api.receive("startSearch", ({ method, folderPath, config, userConfig }) => {
     start = performance.now()
     if (method == ENUMS.SEARCH_METHOD.BFS) {
         worker = new Worker('../bfs.js')
@@ -33,7 +33,7 @@ window.api.receive("startSearch", ({ method, folderPath, config }) => {
         filesScannedLabel.text(scanned)
         new Treant(treeData)
     });
-    worker.postMessage({folderPath, config })
+    worker.postMessage({folderPath, config, userConfig })
 })
 
 const pz = panzoom(tree)
