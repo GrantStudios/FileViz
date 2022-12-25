@@ -3,17 +3,6 @@ const path = require('path')
 const fs = require('fs')
 const cp = require('child_process');
 
-const ENUMS = {
-    SEARCH_METHOD: {
-        BFS: 'BFS', DFS: 'DFS'
-    },
-    OPTIONS: {
-        TREE_STYLE: {
-            CURVE: 'curve', STRAIGHT: 'straight'
-        }
-    }
-}
-
 const showMainWindow = () => {
     const win = new BrowserWindow({
         autoHideMenuBar: true,
@@ -22,7 +11,7 @@ const showMainWindow = () => {
         icon: __dirname + '/build/icon.ico',
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
-            // devTools: false
+            devTools: false
         },
     })
 
@@ -39,8 +28,8 @@ const showMainWindow = () => {
     ipcMain.handle("start", async (e, { method, folderPath, options }) => {
         config = {
             container: "#tree",
-            levelSeparation:    options.levelSeperation, //50
-            siblingSeparation:  options.siblingSeparation, //30
+            levelSeparation:    options.levelSeperation,
+            siblingSeparation:  options.siblingSeparation,
             connectors: {
                 type: options.tree_style,
                 style: {
@@ -61,7 +50,7 @@ const showMainWindow = () => {
             webPreferences: {
                 preload: path.join(__dirname, "preload.js"),
                 nodeIntegrationInWorker: true,
-                // devTools: false
+                devTools: false
             },
         })
         treeWin.loadFile('src/tree.html')
