@@ -43,7 +43,7 @@ body {
   white-space: nowrap;
 }
 
-.label-item.clickable:hover{
+.label-item.clickable:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -68,26 +68,34 @@ body {
   margin-right: 7.5px;
 }
 
-#scan-loading .mdl-spinner__circle{
+#scan-loading .mdl-spinner__circle {
   border-width: 2px !important;
 }
 
-#scan-loading{
+#scan-loading {
   display: flex;
   align-items: center;
 }
 
-#scan-finished{
+#scan-finished {
   display: none;
   align-items: center;
 }
 
-#scan-stopped{
+#scan-stopped {
   display: none;
   align-items: center;
 }
 
-#scan-finished .material-icons, #scan-stopped .material-icons {
+#scan-finished .material-icons,
+#scan-stopped .material-icons {
   font-size: 12px;
   margin-right: 7.5px;
+}
+
+#logo {
+  position: fixed;
+  left: 30px;
+  top: 10px;
+  height: 50px;
 }
