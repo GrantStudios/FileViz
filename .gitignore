@@ -1,6 +1,7 @@
 .project
 
-dist/*.yml
+/dist/*.yml
+/dist/win-unpacked
 .DS_Store
 .env
 .gclient_done
@@ -19,7 +20,6 @@ dist/*.yml
 *.vcxproj.user
 *.xcodeproj
 /.idea/
-/dist/
 node_modules/
 SHASUMS256.txt
 compile_commands.json
